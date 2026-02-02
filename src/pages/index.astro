@@ -1,0 +1,179 @@
+---
+import "../styles/global.css";
+import Heads from "../components/heads.astro";
+import Navbar from "../components/navbar.astro";
+import Icon from "../components/icon.astro";
+import Footer from "../components/footer.astro";
+
+const events_dummy = [
+  {
+    title: "Workshop Fundamental Web Programming",
+    category: "Workshop",
+    date: "24 Okt 2026",
+    time: "09:00 WIB",
+    location: "Lab TIK, Kampus D",
+    price: "Rp 35.000",
+    status: "open",
+    quota: 40,
+    registered: 32,
+  },
+  {
+    title: "Workshop UI/UX Design System",
+    category: "Workshop",
+    date: "05 Nov 2026",
+    time: "08:00 WIB",
+    location: "Lab Multimedia, Kampus J1",
+    price: "Gratis",
+    status: "full",
+    quota: 30,
+    registered: 30,
+  },
+];
+---
+
+<html lang="en">
+  <Heads title="Home - Eventto" />
+  <body class="bg-slate-50 text-slate-800">
+    <Navbar />
+
+    <header class="relative flex justify-center items-center overflow-hidden min-h-dvh">
+      <!-- Decorative Blobs -->
+      <div class="absolute top-0 right-0 -z-10 w-150 h-150 bg-indigo-100/50 rounded-full blur-3xl translate-x-1/3 -translate-y-1/4"></div>
+      <div class="absolute bottom-0 left-0 -z-10 w-100 h-100 bg-purple-100/50 rounded-full blur-3xl -translate-x-1/4 translate-y-1/4"></div>
+
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        <span class="inline-block py-1 px-3 rounded-full bg-indigo-100 text-indigo-700 text-sm font-semibold mb-4"> Simulasi Sistem Pelayanan Terpadu </span>
+        <h1 class="text-3xl md:text-5xl font-extrabold text-slate-900 tracking-tight mb-6 leading-tight">
+          Portal Resmi Layanan Workshop <br class="hidden md:block" />
+          <span class="text-transparent bg-clip-text bg-linear-to-r from-indigo-900 to-purple-600"> Eventto </span>
+        </h1>
+
+        <p class="max-w-2xl mx-auto text-lg text-slate-600 mb-8 leading-relaxed">Platform terpusat untuk pendaftaran workshop, konfirmasi pembayaran, unduh e-sertifikat, dan rekapan kehadiran mahasiswa Universitas ABC.</p>
+
+        <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+          <a href="#workshops" class="w-full sm:w-auto px-8 py-3.5 bg-indigo-900 text-white rounded-xl font-bold hover:bg-indigo-800 transition-all shadow-xl shadow-indigo-900/20 flex items-center justify-center gap-2 group">
+            Daftar Workshop<span class="w-4 h-5 group-hover:translate-y-1 transition-transform">↓</span>
+          </a>
+          <a href="#" class="w-full sm:w-auto px-8 py-3.5 bg-white text-indigo-900 border border-indigo-200 rounded-xl font-bold hover:bg-indigo-50 transition-all flex items-center justify-center gap-2">
+            Chat Telegram Admin <Icon icon="telegram" />
+          </a>
+        </div>
+      </div>
+    </header>
+
+    <section id="services" class="py-12 bg-white border-y border-slate-100">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-10">
+          <h2 class="text-2xl font-bold text-slate-900">Menu Layanan Cepat</h2>
+          <p class="text-slate-500">Akses langsung kebutuhan administrasi workshop Kamu.</p>
+        </div>
+
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6">
+          <!-- Card 1: Chat Telegram -->
+          <a href="#" class="group p-6 rounded-2xl bg-sky-50 border border-sky-100 hover:shadow-lg transition-all hover:-translate-y-1 text-center">
+            <div class="w-12 h-12 bg-sky-500 text-white rounded-xl flex items-center justify-center mx-auto mb-4 shadow-lg shadow-sky-500/30">
+              <Icon icon="telegram" />
+            </div>
+            <h3 class="font-bold text-slate-900 mb-1 group-hover:text-sky-600">Helpdesk Telegram</h3>
+            <p class="text-xs text-slate-500">Tanya jawab langsung admin</p>
+          </a>
+
+          <!-- Card 2: Konfirmasi Bayar -->
+          <a href="#" class="group p-6 rounded-2xl bg-emerald-50 border border-emerald-100 hover:shadow-lg transition-all hover:-translate-y-1 text-center">
+            <div class="w-12 h-12 bg-emerald-500 text-white rounded-xl flex items-center justify-center mx-auto mb-4 shadow-lg shadow-emerald-500/30">
+              <Icon icon="success" />
+            </div>
+            <h3 class="font-bold text-slate-900 mb-1 group-hover:text-emerald-600">Konfirmasi Bayar</h3>
+            <p class="text-xs text-slate-500">Upload bukti transfer</p>
+          </a>
+
+          <!-- Card 3: E-Sertifikat -->
+          <a href="#" class="group p-6 rounded-2xl bg-purple-50 border border-purple-100 hover:shadow-lg transition-all hover:-translate-y-1 text-center">
+            <div class="w-12 h-12 bg-purple-500 text-white rounded-xl flex items-center justify-center mx-auto mb-4 shadow-lg shadow-purple-500/30">
+              <Icon icon="achievement" />
+            </div>
+            <h3 class="font-bold text-slate-900 mb-1 group-hover:text-purple-600">Unduh E-Sertifikat</h3>
+            <p class="text-xs text-slate-500">Cek sertifikat kegiatan</p>
+          </a>
+
+          <!-- Card 4: Rekapan Kehadiran -->
+          <a href="#" class="group p-6 rounded-2xl bg-orange-50 border border-orange-100 hover:shadow-lg transition-all hover:-translate-y-1 text-center">
+            <div class="w-12 h-12 bg-orange-500 text-white rounded-xl flex items-center justify-center mx-auto mb-4 shadow-lg shadow-orange-500/30">
+              <Icon icon="jobList"></Icon>
+            </div>
+            <h3 class="font-bold text-slate-900 mb-1 group-hover:text-orange-600">Rekap Kehadiran</h3>
+            <p class="text-xs text-slate-500">Cek status absensi</p>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <section id="workshops" class="py-20 bg-slate-50">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex justify-between items-end mb-10">
+          <div>
+            <h2 class="text-3xl font-bold text-slate-900 mb-2">Pendaftaran Workshop Dibuka</h2>
+            <p class="text-slate-500">Silakan pilih workshop yang tersedia untuk mendaftar.</p>
+          </div>
+        </div>
+        <div id="events-container" class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+			    {events_dummy.map((event)=>
+				          <div class="group bg-white rounded-2xl border border-slate-200 overflow-hidden hover:shadow-xl transition-all duration-300 flex flex-col">
+                    <div class="h-3 bg-indigo-900 w-full"></div>
+                    
+                    <div class="p-6 flex-1 flex flex-col">
+                        <div class="flex justify-between items-start mb-4">
+                            <span class="px-3 py-1 bg-indigo-50 text-indigo-700 text-xs font-bold rounded-lg uppercase tracking-wide">
+                                {event.category}
+                            </span>
+                            {event.registered >= event.quota 
+                                ? <span class="text-red-600 text-xs font-bold flex items-center gap-1"><Icon icon="error"></Icon> Kuota Penuh</span> 
+                                : <span class="text-emerald-600 text-xs font-bold flex items-center gap-1"><Icon icon="success"></Icon> Tersedia</span>
+                            }
+                        </div>
+
+                        <h3 class="text-lg font-bold text-slate-900 mb-3 group-hover:text-indigo-700 transition-colors">
+                            {event.title}
+                        </h3>
+                        
+                        <div class="space-y-3 mb-4">
+                            <div class="flex items-center text-slate-500 text-sm">
+                                <span class="w-4 h-4 mr-3 text-indigo-400"><Icon icon="date"></Icon></span>
+                                {event.date} • {event.time}
+                            </div>
+                            <div class="flex items-center text-slate-500 text-sm">
+                                <span class="w-4 h-4 mr-3 text-indigo-400"><Icon icon="maps"></Icon></span>
+                                {event.location}
+                            </div>
+                        </div>
+
+                        <div class="mt-auto pt-4 border-t border-slate-100">
+                             <!-- Harga Section -->
+                            <div class="flex items-center justify-between mb-4">
+                                <div class="flex items-center text-indigo-900 font-bold text-lg">
+                                    <i data-lucide="tag" class="w-5 h-5 mr-2 text-indigo-500"></i>
+                                    {event.price}
+                                </div>
+                            </div>
+
+                            <div class="flex items-center justify-between mb-2">
+                                <div class="w-full bg-slate-100 rounded-full h-2 mr-4">
+                                    <div class="bg-indigo-600 h-2 rounded-full" style={`width: ${(event.registered / event.quota) * 100}%`}></div>
+                                </div>
+                                <span class="text-xs font-bold text-slate-600 whitespace-nowrap">{event.registered}/{event.quota}</span>
+                            </div>
+                            
+                            <button class={`mt-2 w-full py-2.5 ${event.registered >= event.quota ? 'bg-slate-200 text-slate-400 cursor-not-allowed disabled' : 'bg-indigo-900 text-white hover:bg-indigo-800'} rounded-lg font-bold text-sm transition-colors flex items-center justify-center gap-2`}>
+                                {event.registered >= event.quota ? 'Pendaftaran Tutup' : 'Daftar Sekarang'}
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                )}
+		    </div>
+      </div>
+    </section>
+
+    <Footer></Footer>
+  </body>
+</html>

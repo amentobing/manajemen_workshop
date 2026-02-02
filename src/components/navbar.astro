@@ -1,0 +1,74 @@
+---
+
+---
+
+<nav id="navbar" class="fixed w-full z-50 py-4 bg-white/80 backdrop-blur-md border-b border-white/50 shadow-sm transition-all">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex justify-between items-center">
+    <!-- Logo -->
+    <div class="flex items-center gap-2">
+      <div class="w-10 h-10 bg-indigo-900 rounded-lg flex items-center justify-center text-white font-bold text-xl">E</div>
+      <span class="text-xl font-bold tracking-tight text-indigo-900">Event<span class="text-indigo-600">to</span></span>
+    </div>
+
+    <!-- Desktop Menu -->
+    <div class="hidden md:flex items-center gap-8">
+      <a href="#" class="font-medium hover:text-indigo-600 transition-colors">Beranda</a>
+      <a href="#services" class="font-medium hover:text-indigo-600 transition-colors">Layanan</a>
+      <a href="#workshops" class="font-medium hover:text-indigo-600 transition-colors">Daftar Workshop</a>
+      <a href="#" class="font-medium hover:text-indigo-600 transition-colors">Cek Sertifikat</a>
+      <button class="text-indigo-900 font-semibold hover:text-indigo-700">Login</button>
+    </div>
+
+    <!-- Mobile Toggle -->
+    <button id="mobile-menu-btn" class="md:hidden text-slate-800">
+      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-7 h-7"
+        ><line x1="4" y1="12" x2="20" y2="12"></line><line x1="4" y1="6" x2="20" y2="6"></line><line x1="4" y1="18" x2="20" y2="18"></line></svg
+      >
+    </button>
+  </div>
+
+  <!-- Mobile Menu Dropdown -->
+  <div id="mobile-menu" class="hidden md:hidden absolute top-full left-0 w-full bg-white shadow-lg border-t">
+    <div class="flex flex-col p-4 gap-4">
+      <a href="#" class="p-2 hover:bg-slate-50 rounded-lg">Beranda</a>
+      <a href="#services" class="p-2 hover:bg-slate-50 rounded-lg">Layanan</a>
+      <a href="#workshops" class="p-2 hover:bg-slate-50 rounded-lg">Daftar Workshop</a>
+      <hr />
+      <button class="w-full text-left p-2 font-semibold text-indigo-900">Login</button>
+    </div>
+  </div>
+
+  <script is:inline>
+    const mobileBtn = document.getElementById("mobile-menu-btn");
+    const mobileMenu = document.getElementById("mobile-menu");
+    let isMenuOpen = false;
+
+    // SVG Constants untuk konsistensi tanpa dependensi Lucide di tombol ini
+    const menuIconSVG = `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-7 h-7"><line x1="4" y1="12" x2="20" y2="12"/><line x1="4" y1="6" x2="20" y2="6"/><line x1="4" y1="18" x2="20" y2="18"/></svg>`;
+    const closeIconSVG = `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-7 h-7"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg>`;
+
+    mobileBtn.addEventListener("click", (e) => {
+      e.stopPropagation();
+      isMenuOpen = !isMenuOpen;
+      if (isMenuOpen) {
+        mobileMenu.classList.remove("hidden");
+        mobileBtn.innerHTML = closeIconSVG;
+      } else {
+        mobileMenu.classList.add("hidden");
+        mobileBtn.innerHTML = menuIconSVG;
+      }
+    });
+
+    document.addEventListener("click", (e) => {
+      // Cek jika menu sedang terbuka
+      if (isMenuOpen) {
+        // Cek jika target klik BUKAN di dalam menu DAN BUKAN tombol toggle
+        if (!mobileMenu.contains(e.target) && !mobileBtn.contains(e.target)) {
+          isMenuOpen = !isMenuOpen;
+          mobileMenu.classList.add("hidden");
+          mobileBtn.innerHTML = menuIconSVG;
+        }
+      }
+    });
+  </script>
+</nav>
