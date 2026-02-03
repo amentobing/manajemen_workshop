@@ -1,5 +1,4 @@
 ---
-import "../styles/global.css";
 import Heads from "../components/heads.astro";
 import Navbar from "../components/navbar.astro";
 import Icon from "../components/icon.astro";
@@ -31,9 +30,8 @@ const events_dummy = [
 ];
 ---
 
-<html lang="en">
-  <Heads title="Home - Eventto" />
-  <body class="bg-slate-50 text-slate-800">
+  <Heads title="Home - Eventto">
+  <body>
     <Navbar />
 
     <header class="relative flex justify-center items-center overflow-hidden min-h-dvh">
@@ -176,4 +174,5 @@ const events_dummy = [
 
     <Footer></Footer>
   </body>
-</html>
+
+  </Heads>
